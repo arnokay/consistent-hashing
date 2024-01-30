@@ -50,8 +50,8 @@ func New(c config) *ConsistentHashing {
 
 func (ch *ConsistentHashing) AddNode(n Node) error {
 	if len(ch.nodes) > ch.config.serversLimit {
-    message := fmt.Sprintf("exided the limit (%v) on a servers", ch.config.serversLimit)
-    fmt.Printf("%v", ch.nodes)
+		message := fmt.Sprintf("exided the limit (%v) on a servers", ch.config.serversLimit)
+		fmt.Printf("%v", ch.nodes)
 		return errors.New(message)
 	}
 	for i := 0; i < ch.config.replicaAmount; i++ {
